@@ -1,5 +1,6 @@
 <div class="ibmBody">
     <h1>IBM</h1>
+    <label>ddd</label>
 <input type="date" [(ngModel)]="searchDate"><button (click)="searchtimeSeriesbyDate()">חיפוש</button>
 <table class="table">
     <thead>
@@ -11,6 +12,7 @@
         <th scope="col" class="sort" (click)="sort('4. close')">Close</th>
         <th scope="col" class="sort" (click)="sortDifferences()">Open - Close</th>
       </tr>
+
     </thead>
     <tbody>
       <tr *ngFor="let key of timeSeriesKeys;let ind=index">
