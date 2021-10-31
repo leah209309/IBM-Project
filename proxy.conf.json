@@ -1,0 +1,10 @@
+{
+    "/api": {
+      "target": "https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.alphavantage.co%2Fquery%3Ffunction%3DTIME_SERIES_DAILY_ADJUSTED%26symbol%3DIBM%26apikey%3Ddemo&data=04%7C01%7CVYBAT-SHEVA%40jerusalem.muni.il%7C74677c275ad0451d198308d996c168c6%7C7cf81354188e4c60a1afd64028f3dbf9%7C0%7C0%7C637706579691327770%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=ps7ftr7B3aEV%2BDUAXWRogE1%2BOnYIyJ6iKBpCw6EBGaI%3D&reserved=0",
+      "secure": true,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+    }
+  }

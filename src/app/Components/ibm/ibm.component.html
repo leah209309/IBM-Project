@@ -1,0 +1,44 @@
+<div class="ibmBody">
+    <h1>IBM</h1>
+<input type="date" [(ngModel)]="searchDate"><button (click)="searchtimeSeriesbyDate()">חיפוש</button>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col" class="sort" (click)="sort('1. open')">Open</th>
+        <th scope="col" class="sort" (click)="sort('2. high')">High</th>
+        <th scope="col" class="sort" (click)="sort('3. low')">Low</th>
+        <th scope="col" class="sort" (click)="sort('4. close')">Close</th>
+        <th scope="col" class="sort" (click)="sortDifferences()">Open - Close</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let key of timeSeriesKeys;let ind=index">
+        <th scope="row">{{key}}</th>
+        <td>{{timeSeries[key]['1. open']}}</td>
+        <td>{{timeSeries[key]['2. high']}}</td>
+        <td>{{timeSeries[key]['3. low']}}</td>
+        <td>{{timeSeries[key]['4. close']}}</td>
+        <td>{{timeSeries[key]['1. open']-timeSeries[key]['4. close']}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item"><a class="page-link" (click)="getPageRecords(currentPage-1)">Previous</a></li>
+      <li class="page-item" *ngFor="let p of pagesNumber;let ind=index"><a class="page-link" (click)="getPageRecords(ind+1)">{{ind+1}}</a></li>
+      <li class="page-item"><a class="page-link" (click)="getPageRecords(currentPage+1)">Next</a></li>
+    </ul>
+  </nav>
+  <div class="profits">
+      <h4> רשימה מחושבת בהסתמך על התאריך:</h4><br>
+  <h6>היום שבו הכי כדאי לקנות הוא {{worthBuingDayD}}</h6><br>
+  <h6>היום שבו הכי כדאי למכור הוא {{worthSellingDayD}}</h6><br>
+  <h6>סך הכל הרווח יהיה {{profitD}}</h6><br><br>
+<h4>רשימה מחושבת שלא על פי תאריך:</h4><br>
+  <h6>היום שבו הכי כדאי לקנות הוא {{worthBuingDay}}</h6><br>
+  <h6>היום שבו הכי כדאי למכור הוא {{worthSellingDay}}</h6><br>
+  <h6>סך הכל הרווח יהיה {{profit}}</h6> 
+  </div>
+
+</div>
