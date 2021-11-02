@@ -1,5 +1,5 @@
 <div class="ibmBody">
-    <h1>IBM Test</h1>
+    <h1>IBM</h1>
 <input type="date" [(ngModel)]="searchDate"><button (click)="searchtimeSeriesbyDate()">חיפוש</button>
 <table class="table">
     <thead>
@@ -11,10 +11,9 @@
         <th scope="col" class="sort" (click)="sort('4. close')">Close</th>
         <th scope="col" class="sort" (click)="sortDifferences()">Open - Close</th>
       </tr>
-
     </thead>
     <tbody>
-      <tr *ngFor="let key of timeSeriesKeys;let ind=index">
+      <tr *ngFor="let key of pageRecords;let ind=index">
         <th scope="row">{{key}}</th>
         <td>{{timeSeries[key]['1. open']}}</td>
         <td>{{timeSeries[key]['2. high']}}</td>
@@ -32,14 +31,13 @@
     </ul>
   </nav>
   <div class="profits">
-      <h4> רשימה מחושבת בהסתמך על רשימה ממוינת עפ"י תאריך:</h4><br>
-  <h6>היום שבו הכי כדאי לקנות הוא {{worthBuingDayD}}</h6><br>
-  <h6>היום שבו הכי כדאי למכור הוא {{worthSellingDayD}}</h6><br>
-  <h6>סך הכל הרווח יהיה {{profitD}}</h6><br><br>
-  <h4> רשימה מחושבת בהסתמך על רשימה לא ממוינת עפ"י תאריך:</h4><br>
+  <h4> רשימה מחושבת בהסתמך על רשימה ממוינת לפי תאריך:</h4><br>
+  <h6>היום שבו הכי כדאי לקנות הוא {{sortedListWorthBuingDay}}</h6><br>
+  <h6>היום שבו הכי כדאי למכור הוא {{sortedListWorthSellingDay}}</h6><br>
+  <h6>סך הכל הרווח יהיה {{sortedListProfit}}</h6><br><br>
+  <h4> רשימה מחושבת בהסתמך על רשימה לא ממוינת לפי תאריך:</h4><br>
   <h6>היום שבו הכי כדאי לקנות הוא {{worthBuingDay}}</h6><br>
   <h6>היום שבו הכי כדאי למכור הוא {{worthSellingDay}}</h6><br>
   <h6>סך הכל הרווח יהיה {{profit}}</h6> 
   </div>
-
 </div>

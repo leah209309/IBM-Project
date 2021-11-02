@@ -8,6 +8,9 @@ import { Observable } from 'rxjs';
 export class IBMService {
 
   constructor(private http:HttpClient) { }
+  //שליפה באמצעות קובץ  proxy
+  //ע"מ לאפשר גישה לאתרים מאובטחים ולמנוע את השגיאה הבאה:
+  //CORS policy: No 'Access-Control-Allow-Origin'
   getTimeSeries():Observable<any>
   {
      return this.http.get<any>(window.location.origin+'/api');
